@@ -24,7 +24,7 @@ export class RepoIssuesComponent implements OnInit {
     // Get repo ID param from route
     this.id = +this.route.snapshot.paramMap.get('id');
 
-    // Get repo issues from githubService using the id param
+    // Get repo issues from githubService using the id param and subscribe to the observable
     this.githubService.getRepoIssuesByID(this.id).subscribe(
       data => {
         this.repoIssues = data;

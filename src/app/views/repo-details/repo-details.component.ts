@@ -18,13 +18,15 @@ export class RepoDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loadState = true;
+
+    // Get repo ID param from route
     this.id = +this.route.snapshot.paramMap.get('id');
 
+    // Get repo issues from githubService using the id param and subscribe to the observable
     this.githubService.getRepoDetailsByID(this.id).subscribe(
       data => {
         this.repoDetails = data;
         this.loadState = false;
-        console.log(this.repoDetails);
       },
       err => {
       this.errorMessage = err.error.message;
