@@ -33,8 +33,6 @@ export class RepoIssuesComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
       }
-
-
     );
   }
 
@@ -48,7 +46,6 @@ export class RepoIssuesComponent implements OnInit {
 
   setFilterClosed() {
     this.filter = 'closed';
-
   }
 
 }
