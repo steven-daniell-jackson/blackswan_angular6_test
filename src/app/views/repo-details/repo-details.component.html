@@ -4,20 +4,16 @@
 <div class="container" *ngIf="!errorMessage">
   <div class="row">
     <div class="col-md-12">
-      <h2 class=" text-center">{{repoDetails.name}} ({{repoDetails.id}})</h2>
-      <p>{{repoDetails.description}}</p>
+      <h2 class=" text-center">{{repoDetails.name}}</h2>
+      <p class=" text-center">{{repoDetails.description}}</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
       <ul class="list-group">
-        <app-external-link href="{{repoDetails.homepage}}" linkText='Homepage' className="list-group-item list-group-item-action" ></app-external-link>
-        <app-external-link href="{{repoDetails.html_url}}" linkText='Github URL' className="list-group-item list-group-item-action" ></app-external-link>
-        <app-external-link href="{{repoDetails.downloads_url}}" linkText='Download URL' className="list-group-item list-group-item-action" ></app-external-link>
-        <a href="{{repoDetails.homepage}}" target="_blank" class="list-group-item list-group-item-action">Homepage</a>
-        <a href="{{repoDetails.html_url}}" target="_blank" class="list-group-item list-group-item-action">Github URL</a>
-        <a href="{{repoDetails.downloads_url}}" target="_blank" class="list-group-item list-group-item-action">Download URL</a>
+        <app-external-link href="{{repoDetails.homepage}}" *ngIf="repoDetails.homepage" linkText='Homepage' className="list-group-item list-group-item-action" ></app-external-link>
+        <app-external-link href="{{repoDetails.html_url}}" *ngIf="repoDetails.html_url" linkText='Github URL' className="list-group-item list-group-item-action" ></app-external-link>
       </ul>
     </div>
     <div class="col-md-6">
@@ -39,7 +35,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
       <app-back-button></app-back-button>
       <app-link routerLink="./issues" className="btn-primary" linkText='View List of Issues'></app-link>
       <app-link routerLink="./piechart" className="btn-success" linkText='View Piechart' [queryParams]="{full_name: repoDetails.full_name, open_issues: repoDetails.open_issues_count }"></app-link>

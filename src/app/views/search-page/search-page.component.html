@@ -8,7 +8,7 @@
 </div>
 
 <div class="container">
-  <div class="row" *ngIf="repo">
+  <div class="row text-center" *ngIf="repo">
     <app-search-item *ngFor="let repo of repo.items" [repoItem]="repo"></app-search-item>
   </div>
 </div>
