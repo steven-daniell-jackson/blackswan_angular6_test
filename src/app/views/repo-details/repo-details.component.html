@@ -1,0 +1,48 @@
+<app-error-message className='btn-danger error-message' errorMessage='{{errorMessage}}'  *ngIf="errorMessage"></app-error-message>
+<app-loader *ngIf="loadState"></app-loader>
+
+<div class="container" *ngIf="!errorMessage">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class=" text-center">{{repoDetails.name}} ({{repoDetails.id}})</h2>
+      <p>{{repoDetails.description}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="list-group">
+        <app-external-link href="{{repoDetails.homepage}}" linkText='Homepage' className="list-group-item list-group-item-action" ></app-external-link>
+        <app-external-link href="{{repoDetails.html_url}}" linkText='Github URL' className="list-group-item list-group-item-action" ></app-external-link>
+        <app-external-link href="{{repoDetails.downloads_url}}" linkText='Download URL' className="list-group-item list-group-item-action" ></app-external-link>
+        <a href="{{repoDetails.homepage}}" target="_blank" class="list-group-item list-group-item-action">Homepage</a>
+        <a href="{{repoDetails.html_url}}" target="_blank" class="list-group-item list-group-item-action">Github URL</a>
+        <a href="{{repoDetails.downloads_url}}" target="_blank" class="list-group-item list-group-item-action">Download URL</a>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Forks_count
+          <span class="badge badge-primary badge-pill">{{repoDetails.forks_count}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Stargazers
+          <span class="badge badge-primary badge-pill">{{repoDetails.stargazers_count}}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Open Issues
+          <span class="badge badge-primary badge-pill">{{repoDetails.open_issues_count}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-back-button></app-back-button>
+      <app-link routerLink="./issues" className="btn-primary" linkText='View List of Issues'></app-link>
+      <app-link routerLink="./piechart" className="btn-success" linkText='View Piechart' [queryParams]="{full_name: repoDetails.full_name, open_issues: repoDetails.open_issues_count }"></app-link>
+    </div>
+  </div>
+</div>

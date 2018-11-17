@@ -1,0 +1,9 @@
+<div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 offset-4">
+  <a [routerLink]="['/repo-details', repoItem.id]">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{repoItem.name}}</h5>
+        <p class="card-text">{{repoItem.description}}</p>
+        <p class="card-footer">View more info</p>
+      </div>
+    </div>

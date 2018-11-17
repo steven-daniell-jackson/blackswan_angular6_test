@@ -1,0 +1,22 @@
+<app-error-message className='btn-danger error-message' errorMessage='{{errorMessage}}' *ngIf="errorMessage"></app-error-message>
+
+<app-loader *ngIf="loadState"></app-loader>
+
+
+<div class="container" *ngIf="!errorMessage">
+  <div class="button-wrapper" *ngIf="!loadState">
+    <app-back-button></app-back-button>
+    <app-button (click)='setFilterAll()' className="btn-primary" [buttonText]="'All Issues'"></app-button>
+    <app-button (click)='setFilterClosed()' className="btn-success" [buttonText]="'Closed Issues'"></app-button>
+    <app-button (click)='setFilterOpen()' className="btn-danger" [buttonText]="'Open Issues'"></app-button>
+  </div>
+
+  <div *ngFor="let issue of repoIssues">
+    <ul [ngClass]="[filter === issue.state || filter === 'all'? 'show' : 'hide']" class="list-unstyled row ">
+      <li class="col-md-8">{{issue.title}}</li>
+      <li class="col-md-2 {{issue.state}}">{{issue.state}}</li>
+      <li class="col-md-2 "><a href="{{issue.html_url}}" target="_blank">Issue URL</a></li>
+    </ul>
+
+  </div>
+</div>
