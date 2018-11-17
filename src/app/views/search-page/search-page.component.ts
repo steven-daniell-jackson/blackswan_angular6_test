@@ -6,7 +6,7 @@ import { GithubService } from "../../service/github.service";
   templateUrl: "./search-page.component.html",
   styleUrls: ["./search-page.component.css"]
 })
-export class SearchPageComponent implements OnInit {
+export class SearchPageComponent {
   constructor(private githubService: GithubService) {}
 
   // Get input value from local reference
@@ -14,8 +14,6 @@ export class SearchPageComponent implements OnInit {
 
   // Used for the for loop once API data has been assigned.
   repo = [];
-
-  ngOnInit() {}
 
   /*
   Method: Search Github API on input Keyup property
