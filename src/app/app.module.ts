@@ -17,6 +17,8 @@ import { ButtonComponent } from './elements/button/button.component';
 import { LinkComponent } from './elements/link/link.component';
 import { ExternalLinkComponent } from './elements/external-link/external-link.component';
 import { ErrorMessageComponent } from './elements/error-message/error-message.component';
+import { HeaderComponent } from './elements/header/header.component';
+import { FooterComponent } from './elements/footer/footer.component';
 
 
 
@@ -34,7 +36,9 @@ import { ErrorMessageComponent } from './elements/error-message/error-message.co
     ButtonComponent,
     LinkComponent,
     ExternalLinkComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
