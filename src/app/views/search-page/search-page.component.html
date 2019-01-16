@@ -7,8 +7,14 @@
   </div>
 </div>
 
+<div *ngIf='errorMsg'>
+<app-error-message errorMessage="{{errorMsg}}"></app-error-message>
+</div>
+
+<div *ngIf='!errorMsg'>
 <div class="container">
   <div class="row text-center" *ngIf="repo">
     <app-search-item *ngFor="let repo of repo.items" [repoItem]="repo"></app-search-item>
   </div>
+</div>
 </div>

@@ -5,14 +5,10 @@ import { Component, OnInit, Input  } from '@angular/core';
   templateUrl: './search-item.component.html',
   styleUrls: ['./search-item.component.css']
 })
-export class SearchItemComponent implements OnInit {
+export class SearchItemComponent {
 
   @Input() repoItem;
 
   constructor() { }
-
-  ngOnInit() {
-
-  }
 
 }

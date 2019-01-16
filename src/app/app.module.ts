@@ -20,8 +20,6 @@ import { ErrorMessageComponent } from './elements/error-message/error-message.co
 import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

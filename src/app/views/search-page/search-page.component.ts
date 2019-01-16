@@ -13,8 +13,8 @@ export class SearchPageComponent {
   @ViewChild("searchInput") searchInputRef: ElementRef;
 
   // Used for the for loop once API data has been assigned.
-  repo = [];
-
+  public repo = [];
+  public errorMsg;
   /*
   Method: Search Github API on input Keyup property
   Assign returned data to 'repo' property
@@ -26,8 +26,8 @@ export class SearchPageComponent {
     // Subscribe to the observable in the githubService
     this.githubService
       .searchRepo(this.searchInputRef.nativeElement.value)
-      .subscribe(data => {
-        this.repo = data;
-      });
+      .subscribe(data => this.repo = data,
+      error => this.errorMsg = error
+    );
   }
 }
