@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { GithubService } from "../../service/github.service";
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { GithubService } from '../../service/github.service';
 
 @Component({
-  selector: "app-search-page",
-  templateUrl: "./search-page.component.html",
-  styleUrls: ["./search-page.component.css"]
+  selector: 'app-search-page',
+  templateUrl: './search-page.component.html',
+  styleUrls: ['./search-page.component.css']
 })
 export class SearchPageComponent {
   constructor(private githubService: GithubService) {}
 
   // Get input value from local reference
-  @ViewChild("searchInput") searchInputRef: ElementRef;
+  @ViewChild('searchInput') searchInputRef: ElementRef;
 
   // Used for the for loop once API data has been assigned.
   public repo = [];
