@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<div *ngIf='errorMsg'>
+<div *ngIf='errorMsg && !repo'>
 <app-error-message errorMessage="{{errorMsg}}"></app-error-message>
 </div>
 

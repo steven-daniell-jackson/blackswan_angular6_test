@@ -1,5 +1,4 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { GithubService } from '../../../../service/github.service';
@@ -11,14 +10,13 @@ import { GithubService } from '../../../../service/github.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  formGroup: FormGroup;
-  subject: Subject<any> = new Subject();
-
   constructor(private githubService: GithubService) {}
 
   // Used for the for loop once API data has been assigned.
   public repo = [];
   public errorMsg;
+  public inputValue;
+  subject: Subject<any> = new Subject();
 
   // Get input value from local reference
   @ViewChild('searchInput') searchInputRef: ElementRef;
@@ -31,18 +29,26 @@ export class SearchPageComponent implements OnInit {
   */
  this.repo = [];
 
+
  // Subscribe to the observable in the githubService
  this.subject
    .pipe(debounceTime(1000))
    .subscribe(() => {
-   this.githubService
-     .searchRepo(this.searchInputRef.nativeElement.value)
-     .subscribe(data => this.repo = data,
-     error => this.errorMsg = error
-      );
+
+    this.inputValue = this.searchInputRef.nativeElement.value;
+
+    // Check to see if input has a value
+    if (this.inputValue) {
+      this.githubService
+      .searchRepo(this.inputValue)
+      .subscribe(data => this.repo = data,
+      error => this.errorMsg = error
+       );
+      } else {
+        this.repo = [];
+      }
     });
   }
-
 
   searchRepo() {
     // Reset repo property
