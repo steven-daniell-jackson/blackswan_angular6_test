@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="input-group col-md-6 offset-md-3">
-      <input type="text" class="form-control"  placeholder="Search Repository Name" aria-label="Search Repository Name"
+      <input type="text" class="form-control" (keyup)="searchRepo()" placeholder="Search Repository Name" aria-label="Search Repository Name"
         aria-describedby="button-addon2" #searchInput>
-        <button class='bg-dark' (click)="searchRepo()">Search</button>
     </div>
   </div>
 </div>
