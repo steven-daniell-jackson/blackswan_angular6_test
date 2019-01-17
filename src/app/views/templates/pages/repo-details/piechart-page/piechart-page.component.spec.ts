@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PiechartPageComponent } from './piechart-page.component';
+import { LoaderComponent } from '../../../parts/loader/loader.component';
+import { BackButtonComponent } from '../../..//parts/back-button/back-button.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClient, HttpHandler} from '@angular/common/http';
+
+// Service Components
+import { GithubService } from '../../../../../service/github.service';
 
 describe('PiechartPageComponent', () => {
   let component: PiechartPageComponent;
@@ -8,7 +15,10 @@ describe('PiechartPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PiechartPageComponent ]
+      imports: [RouterTestingModule],
+      providers: [GithubService, HttpClient, HttpHandler],
+      declarations: [ PiechartPageComponent, LoaderComponent, BackButtonComponent ]
+
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { SearchItemComponent } from './search-item.component';
+import { RouterModule } from '@angular/router';
 
 describe('SearchItemComponent', () => {
   let component: SearchItemComponent;
@@ -8,7 +10,9 @@ describe('SearchItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchItemComponent ]
+      imports: [RouterModule.forRoot([])],
+      declarations: [ SearchItemComponent ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}]
     })
     .compileComponents();
   }));

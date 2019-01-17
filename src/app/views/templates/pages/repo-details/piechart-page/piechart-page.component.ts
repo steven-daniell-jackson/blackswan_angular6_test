@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 import { ActivatedRoute } from '@angular/router';
 import { GithubService } from '../../../../../service/github.service';
