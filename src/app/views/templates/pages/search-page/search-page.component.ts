@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { GithubService } from '../../service/github.service';
+import { GithubService } from '../../../../service/github.service';
 
 @Component({
   selector: 'app-search-page',

@@ -1,24 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './elements/navbar/navbar.component';
-import { SearchPageComponent } from './views/search-page/search-page.component';
-import { PiechartPageComponent } from './views/repo-details/piechart-page/piechart-page.component';
-import { GithubService } from './service/github.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { SearchItemComponent } from './views/search-page/search-item/search-item.component';
-import { RepoDetailsComponent } from './views/repo-details/repo-details.component';
-import { RepoIssuesComponent } from './views/repo-details/repo-issues/repo-issues.component';
-import { LoaderComponent } from './elements/loader/loader.component';
-import { BackButtonComponent } from './elements/back-button/back-button.component';
-import { ButtonComponent } from './elements/button/button.component';
-import { LinkComponent } from './elements/link/link.component';
-import { ExternalLinkComponent } from './elements/external-link/external-link.component';
-import { ErrorMessageComponent } from './elements/error-message/error-message.component';
-import { HeaderComponent } from './elements/header/header.component';
-import { FooterComponent } from './elements/footer/footer.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+// Service Components
+import { GithubService } from './service/github.service';
+
+// HTML Parts and Directives
+import { LoaderComponent } from './views/templates/parts/loader/loader.component';
+import { BackButtonComponent } from './views/templates/parts/back-button/back-button.component';
+import { ButtonComponent } from './views/templates/parts/button/button.component';
+import { LinkComponent } from './views/templates/parts/link/link.component';
+import { ExternalLinkComponent } from './views/templates/parts/external-link/external-link.component';
+import { ErrorMessageComponent } from './views/templates/parts/error-message/error-message.component';
+import { HeaderComponent } from './views/templates/parts/header/header.component';
+import { FooterComponent } from './views/templates/parts/footer/footer.component';
+import { NavbarComponent } from './views/templates/parts/navbar/navbar.component';
+
+// Page Templates
+import { SearchPageComponent } from './views/templates/pages/search-page/search-page.component';
+import { PiechartPageComponent } from './views/templates/pages/repo-details/piechart-page/piechart-page.component';
+import { SearchItemComponent } from './views/templates/pages/search-page/search-item/search-item.component';
+import { RepoDetailsComponent } from './views/templates/pages/repo-details/repo-details.component';
+import { RepoIssuesComponent } from './views/templates/pages/repo-details/repo-issues/repo-issues.component';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({
@@ -6,15 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `<button class="btn {{className}}">{{buttonText}}</button>`,
   styleUrls: ['./button.component.css']
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
 
   @Input() className: String;
   @Input() buttonText: String;
 
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

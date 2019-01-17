@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Location} from '@angular/common';
 
 @Component({
@@ -6,12 +6,9 @@ import {Location} from '@angular/common';
   template: ` <button (click)='backClicked()' class=" btn btn-secondary">Back</button>`,
   styleUrls: ['./back-button.component.css']
 })
-export class BackButtonComponent implements OnInit {
+export class BackButtonComponent {
 
   constructor(private _location: Location) { }
-
-  ngOnInit() {
-  }
 
   backClicked() {
     this._location.back();

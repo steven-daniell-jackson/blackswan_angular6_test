@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-external-link',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   {{linkText}} </a>`,
   styleUrls: ['./external-link.component.css']
 })
-export class ExternalLinkComponent implements OnInit {
+export class ExternalLinkComponent {
 
   @Input() href: String;
   @Input() className: String;
@@ -17,7 +17,5 @@ export class ExternalLinkComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
 
 }
